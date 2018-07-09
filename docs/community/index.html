@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>? ??? ??? ??????</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<link rel="StyleSheet" href="../res/text.css" type="text/css">
+<script language="javascript">
+    var iframeids=["ifrm"] // iframe ? ??? ID ? ?? ? ???
+    var iframehide="yes"
+    function resizeCaller() {
+        var dyniframe=new Array();
+        for (i=0; i<iframeids.length; i++) {
+            if (document.getElementById) {
+                resizeIframe(iframeids[i]);
+            }
+            if ((document.all || document.getElementById) && iframehide=="no") {
+                var tempobj=document.all? document.all[iframeids[i]] : document.getElementById(iframeids[i]);
+                tempobj.style.display="block";
+            }
+        }
+    }
+    
+    function resizeIframe(frameid) {
+        var currentfr=document.getElementById(frameid);
+        if (currentfr && !window.opera) {
+            currentfr.style.display="block";
+            if (currentfr.contentDocument && currentfr.contentDocument.body.offsetHeight) { //ns6 syntax
+                currentfr.height = currentfr.contentDocument.body.offsetHeight; 
+            } else if (currentfr.Document && currentfr.Document.body.scrollHeight) { //ie5+ syntax
+                currentfr.height = currentfr.Document.body.scrollHeight;
+            }
+            if (currentfr.addEventListener) {
+                currentfr.addEventListener("load", readjustIframe, false);
+            } else if (currentfr.attachEvent) {
+				currentfr.detachEvent("onload", readjustIframe)  // THIS ONE
+                currentfr.attachEvent("onload", readjustIframe);
+            }
+        }
+    }
+
+    function readjustIframe(loadevt) {
+        var crossevt=(window.event)? event : loadevt;
+        var iframeroot=(crossevt.currentTarget)? crossevt.currentTarget : crossevt.srcElement;
+        if (iframeroot) {
+            resizeIframe(iframeroot.id);
+        }
+    }
+
+    function loadintoIframe(iframeid, url) {
+        if (document.getElementById) {
+            document.getElementById(iframeid).src=url;
+        }
+    }
+
+    if (window.addEventListener) {
+        window.addEventListener("load", resizeCaller, false);
+    } else if (window.attachEvent) {
+        window.attachEvent("onload", resizeCaller);
+    } else {
+        window.onload=resizeCaller;
+    }
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="10" topmargin="10">
+				<!-----------------------????????-------------------------------->   
+			   <form name="sendform" method="post" enctype="text/plain">
+              <table width="480" border="0" cellspacing="0" cellpadding="0">
+			    			     <tr> 
+                  <td height="10" colspan="2"></td>
+                </tr>
+				
+                <tr>
+				   <td bgcolor="#00a0e0" width="100" height="5">
+					<spacer height="1" type="BLOCK"></td>
+					<td bgcolor="#E7E5E5" width="380" height="5"></td>
+				</tr>
+				<tr> 
+                  <td height="2" colspan="2"></td>
+                </tr>
+              </table>
+<table width="480" border="0" cellspacing="0" cellpadding="0">			  
+  <tr> 
+    <td width="17">&nbsp;</td>
+    <td width="480" height="200"><iframe id="ifrm" name="ifrm" width="565" height="450" src="http://www.mapo.seoul.kr/dev/board/list.jsp?typeID=47&boardid=83" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></td>
+    <td width="18">&nbsp;</td>
+  </tr>
+</table>  			  
+			                         <!------------graybar------------------>
+			   <table width="480" border="0" cellspacing="0" cellpadding="0">
+			 <tr> 
+                <td height="2" colspan="2"></td>
+              </tr>
+              <tr>
+				   <td bgcolor="#00a0e0" width="100" height="5">
+					<spacer height="1" type="BLOCK"></td>
+					<td bgcolor="#E7E5E5" width="380" height="5"></td>
+				</tr> 
+				
+			<tr> 
+                <td height="2" colspan="2"></td>
+              </tr>				               
+              </table>
+            </form>  
+
+</body>
+</html>
+
+<!-- Last Generated Date :: [2005-10-24 11:56:22 457] -->

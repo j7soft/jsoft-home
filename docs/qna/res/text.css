@@ -1,0 +1,42 @@
+body, td, .bd, .board {FONT-SIZE: 9pt; COLOR: #363636; LINE-HEIGHT: 13pt; FONT-FAMILY:"±¼¸²", "Seoul", "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none}
+a{COLOR: #363636; LINE-HEIGHT: 13pt; FONT-FAMILY:"±¼¸²", "Seoul", "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none}
+a:hover {COLOR: #939292; TEXT-DECORATION: underline}
+
+body {
+scrollbar-face-color: #FFFFFF; scrollbar-shadow-color: #cccccc; 
+scrollbar-highlight-color: #cccccc; scrollbar-3dlight-color: #FFFFFF; 
+scrollbar-darkshadow-color: #FFFFFF; scrollbar-track-color: #FFFFFF;
+scrollbar-arrow-color: #cccccc
+}
+
+.small {FONT-SIZE: 8pt; COLOR: #242424; LINE-HEIGHT: 12pt; FONT-FAMILY: "µ¸¿ò", "±¼¸²", "Seoul", "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none}
+
+
+/* bbs */
+
+.bbsP {
+	 }	
+.bbsP2 {
+	COLOR: #242424; PADDING-TOP: 15px;LINE-HEIGHT: 14pt; PADDING-LEFT: 22px;padding-bottom:20px; }
+.bbsP3 {
+ COLOR:#2424248; PADDING-TOP: 2px;LINE-HEIGHT: 14pt; PADDING-LEFT: 12px; FONT-FAMILY: "µ¸¿ò", "±¼¸²", "Seoul", "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none}	
+	
+ /* input */
+.input      {FONT-FAMILY:"Arial", "µ¸¿òÃ¼"; FONT-SIZE:9pt; BORDER:#a2a2a2 1px solid; COLOR:#242424; BACKGROUND-COLOR: #ffffff}	
+.input_basic {
+	BORDER-RIGHT: #a2a2a2 1px solid; BORDER-TOP: #a2a2a2 1px solid; FONT-SIZE: 9pt; BORDER-LEFT: #a2a2a2 1px solid; 
+	COLOR: #000000; BORDER-BOTTOM: #a2a2a2 1px solid; FONT-FAMILY: "Arial", "µ¸¿òÃ¼"; BACKGROUND-COLOR: #ffffff; HEIGHT:20px
+}
+
+/* td */
+
+.partner{FONT-SIZE: 9pt; COLOR: #5a5a5a; LINE-HEIGHT: 11pt; FONT-FAMILY:'µ¸¿ò',"±¼¸²", "Seoul", "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none}
+.F{COLOR: #4a494a; FONT-FAMILY:µ¸¿ò; FONT-SIZE:8pt;padding:8px }	
+.H{COLOR: #242424; FONT-FAMILY:µ¸¿ò; FONT-SIZE:8pt;padding:8px;}
+.S{COLOR: #363636; FONT-FAMILY:µ¸¿ò; FONT-SIZE:8pt;}
+.SIBO{COLOR: #363636; FONT-FAMILY:±¼¸²; FONT-SIZE:14pt;}
+.Sch{COLOR: #363636; FONT-FAMILY:µ¸¿ò;LINE-HEIGHT: 13pt;}
+
+/*p */
+
+.T{COLOR: #121212; FONT-FAMILY:µ¸¿ò; line-height:160%;}

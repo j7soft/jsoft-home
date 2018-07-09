@@ -1,0 +1,238 @@
+<html>
+<head>
+<title>⊙ 궁금한 사항을 문의하십시오</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<link rel="StyleSheet" href="../res/text.css" type="text/css">
+<script language='javascript'>
+	function checkForm() {
+		if (document.sendform.이름.value.length == 0) {
+			alert("이름을 입력하세요");
+			document.sendform.이름.focus();
+			return false;
+		} 
+
+
+		if (document.sendform.회사명.value.length == 0) {
+			alert("회사명을 입력하세요");
+			document.sendform.회사명.focus();
+			return false;
+		} 
+
+		if (document.sendform.소속부서.value.length == 0) {
+			alert("소속부서를 입력하세요");
+			document.sendform.소속부서.focus();
+			return false;
+		} 
+
+		if (document.sendform.주소1.value.length == 0) {
+			alert("주소1을 입력하세요");
+			document.sendform.주소1.focus();
+			return false;
+		} 
+
+		if (document.sendform.주소2.value.length == 0) {
+			alert("주소2을 입력하세요");
+			document.sendform.주소2.focus();
+			return false;
+		} 
+
+		if (document.sendform.연락처.value.length == 0) {
+			alert("연락처를 입력하세요");
+			document.sendform.연락처.focus();
+			return false;
+		} 
+
+		if (document.sendform.Email.value.length == 0) {
+			alert("이메일을 입력하세요");
+			document.sendform.Email.focus();
+			return false;
+		} 
+
+		if (document.sendform.문의내용.value.length == 0) {
+			alert("문의내용을 입력하세요");
+			document.sendform.문의내용.focus();
+			return false;
+		} 
+
+		if (!emailCheck(document.sendform.Email.value)) {
+			alert("유효한 이메일 주소를 입력하세요");
+			document.sendform.Email.focus();
+			return false;
+		}
+		
+		return true;
+	}
+
+	// E-Mail 채크
+	function emailCheck (emailStr) {
+		var exclude=/[^@\-\.\w]|^[_@\.\-]|[\._\-]{2}|[@\.]{2}|(@)[^@]*\1/;
+		var check=/@[\w\-]+\./;
+		var checkend=/\.[a-zA-Z]{2,3}$/;
+
+    	if(((emailStr.search(exclude) != -1)||(emailStr.search(check)) == -1)||(emailStr.search(checkend) == -1)){
+			return false;
+		} else {
+			return true;
+		}
+    }
+
+	function sendmail() {
+		if (!checkForm()) {
+			return;
+		}
+
+		document.sendform.action = "mailto:admin@j-soft.kr";
+		document.sendform.submit();
+		self.close();
+	}
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="10" topmargin="10">
+				<!-----------------------게시판테이블시작-------------------------------->   
+			   <form name="sendform" method="post" enctype="text/plain">
+              <table width="480" border="0" cellspacing="0" cellpadding="0">
+			    <tr> 
+                  <td height="3" style="padding-left:12px;" colspan="2">
+<img src="../res/form_title.gif" alt="" width="258" height="17" border="0"></td>
+                </tr>
+			     <tr> 
+                  <td height="10" colspan="2"></td>
+                </tr>
+				
+                <tr>
+				   <td bgcolor="#00a0e0" width="100" height="5">
+					<spacer height="1" type="BLOCK"></td>
+					<td bgcolor="#E7E5E5" width="380" height="5"></td>
+				</tr>
+				<tr> 
+                  <td height="2" colspan="2"></td>
+                </tr>
+              </table>
+			  
+              <table width="480" border="0" cellpadding="0" cellspacing="0">
+                <tr bgcolor="#E8E4E4"> 
+                  <td valign="top"> 
+                    <table width="480" border="0" cellspacing="1" cellpadding="0">
+                      <tr bgcolor="#FFFFFF"> 
+                        <td width="100" height="30" align="center" bgcolor="#FFFFFF"> 
+                          <table width="100%" border="0" cellspacing="3" cellpadding="0" height="100%">
+                            <tr> 
+                              <td bgcolor="#f3f3f3" align="center">이름</td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td width="380">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input  class="input" type="text" name="이름" size="15"></td>
+                      </tr>
+                      <tr bgcolor="#FFFFFF"> 
+                        <td width="100" height="30"> 
+                          <table width="100%" border="0" cellspacing="3" cellpadding="0" height="100%">
+                            <tr> 
+                              <td bgcolor="#f3f3f3" align="center">회사명</td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td width="380">&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input  class="input" type="text" name="회사명" size="50">
+                        </td>
+                      </tr>
+					  
+					   <tr bgcolor="#FFFFFF"> 
+                        <td width="100" height="30"> 
+                          <table width="100%" border="0" cellspacing="3" cellpadding="0" height="100%">
+                            <tr> 
+                              <td bgcolor="#f3f3f3" align="center">소속부서</td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td width="380">&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input  class="input" type="text" name="소속부서" size="50">
+                        </td>
+                      </tr>
+					  
+                      <tr bgcolor="#FFFFFF"> 
+                        <td width="100" height="30" rowspan="2"> 
+                          <table width="100%" border="0" cellspacing="3" cellpadding="0" height="100%">
+                            <tr> 
+                              <td bgcolor="#f3f3f3" align="center">주소</td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td width="380">&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input  class="input" type="text" name="주소1" size="30">
+                        </td>
+                      </tr>	  
+					  <tr bgcolor="#FFFFFF"> 
+                      <td width="380">&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input  class="input" type="text" name="주소2" size="50">
+                      </tr>
+					  
+					   <tr bgcolor="#FFFFFF"> 
+                        <td width="100" height="30"> 
+                          <table width="100%" border="0" cellspacing="3" cellpadding="0" height="100%">
+                            <tr> 
+                              <td bgcolor="#f3f3f3" align="center">연락처</td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td width="380">&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input  class="input" type="text" name="연락처" size="50">
+                        </td>
+                      </tr>
+					  <tr bgcolor="#FFFFFF"> 
+                        <td width="100" height="30"> 
+                          <table width="100%" border="0" cellspacing="3" cellpadding="0" height="100%">
+                            <tr> 
+                              <td bgcolor="#f3f3f3" align="center">E-mail</td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td width="380">&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input  class="input" type="text" name="Email" size="50">
+                        </td>
+                      </tr>
+					  
+                      <tr bgcolor="#FFFFFF"> 
+                        <td width="100" height="30"> 
+                          <table width="100%" border="0" cellspacing="3" cellpadding="0" height="100%">
+                            <tr> 
+                              <td bgcolor="#f3f3f3" align="center">문의내용</td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td width="380"> <br>
+                          &nbsp;&nbsp;&nbsp;&nbsp; 
+                          <textarea class="input" name="문의내용" cols="60" rows="5"></textarea>
+                          <br>
+                           <br>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+			                         <!------------graybar------------------>
+			   <table width="480" border="0" cellspacing="0" cellpadding="0">
+			 <tr> 
+                <td height="2" colspan="2"></td>
+              </tr>
+              <tr>
+				   <td bgcolor="#00a0e0" width="100" height="5">
+					<spacer height="1" type="BLOCK"></td>
+					<td bgcolor="#E7E5E5" width="380" height="5"></td>
+				</tr> 
+				
+			<tr> 
+                <td height="2" colspan="2"></td>
+              </tr>	
+			  <tr><td align="right" colspan="2">
+              <a href="javascript:sendmail();"><img src="../res/apply.gif" alt="" width="35" height="22" border="0"></a> 
+              <br>
+			   </td></tr>             
+              </table>
+            </form>  
+
+</body>
+</html>
+
+<!-- Last Generated Date :: [2005-09-07 13:38:56 939] -->
